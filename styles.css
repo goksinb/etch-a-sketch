@@ -1,5 +1,5 @@
+
 body {
-  background-color: rgb(244, 250, 254);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -21,20 +21,25 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
-  grid-auto-columns: minmax(1fr, auto);
+  /* grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-auto-columns: minmax(1fr, auto); */
   width: 100%;
   width: 600px;
   height: 600px;
   flex: 1;
 }
+
+.grid-element {
+  user-select: none;
+}
+
 .grid div {
   border: solid 0.1px;
   border-color: rgb(187, 187, 187);
 }
 .grid div:hover {
-  background-color: rgb(199, 199, 199);
+  background-color: rgb(212, 209, 209);
 }
 
 #buttons {
@@ -54,30 +59,40 @@ body {
 button {
   margin: 1rem 0.3rem;
   border: solid 1px rgb(187, 187, 187);
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 0.7rem 1.2rem;
   cursor: pointer;
 }
 
 #colorBtn {
-  background-color: #abe4ff;
+  background-color: #e2e2e2;
 }
 
 #rainbowBtn {
   background-image: linear-gradient(
     to right,
-    #5900ff,
-    #5122fb,
-    #00b3ff,
-    #00ffcc,
-    #00ff55,
-    #eaff00,
-    #ffcc00,
-    #ff2a00
+    rgb(139, 13, 230),
+    rgb(109, 111, 255),
+    rgb(0, 191, 255),
+    rgb(0, 255, 234),
+    rgb(119, 255, 0),
+    rgb(234, 255, 0),
+    rgb(255, 204, 0),
+    rgb(255, 60, 0)
   );
-  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+  box-shadow: 1px 1px 5px 1px rgba(196, 49, 176, 0.75);
+  border-color: rgb(155, 10, 155);
+  border-width: 1px;
+}
+
+#eraserBtn {
+  background-color: rgb(255, 224, 240);
+}
+
+#clearBtn {
+  background-color: #ffffff;
 }
 
 .divColorBlack {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(12, 12, 12);
 }
