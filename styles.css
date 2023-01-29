@@ -1,10 +1,15 @@
 
 body {
+  font-family: ;
+  font-size: large;
+  background-color: rgb(230, 233, 242);
   margin: 0;
   padding: 0;
   text-align: center;
   justify-content: center;
 }
+
+
 
 .container {
   margin: auto;
@@ -12,7 +17,7 @@ body {
   margin-bottom: 4rem;
   display: flex;
   background: rgb(255, 255, 255);
-  border: solid 1px rgb(105, 0, 141);
+  border: solid 1px rgb(57, 1, 76);
   border-radius: 4px;
   width: 100%;
   width: 600px;
@@ -60,12 +65,12 @@ button {
   margin: 1rem 0.3rem;
   border: solid 1px rgb(187, 187, 187);
   border-radius: 4px;
-  padding: 0.7rem 1.2rem;
+  padding: 0.7rem 2rem;
   cursor: pointer;
 }
 
 #colorBtn {
-  background-color: #e2e2e2;
+  background-color: #e6ffd4;
 }
 
 #rainbowBtn {
@@ -93,6 +98,4 @@ button {
   background-color: #ffffff;
 }
 
-.divColorBlack {
-  background-color: rgb(12, 12, 12);
-}
+

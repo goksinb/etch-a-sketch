@@ -1,27 +1,50 @@
 const defaultMode = "default";
 const defaultSize = 30;
 const defaultColor = "#000000";
+const defaultBackground = "#ffffff";
 
 let currentMode = defaultMode;
 let currentSize = defaultSize;
 let currentColor = defaultColor;
 let hoveredElement = "";
+let currentBackgroundColor = defaultBackground;
+
+// ID selectors
 
 const divElement = document.getElementById("divSquare");
 const sizeValueElement = document.getElementById("sizeValue");
 const sizeSliderElement = document.getElementById("sizeSlider");
-const gridElement = document.querySelector(".grid");
+const gridElement = document.getElementById("grid");
 const colorPickerElement = document.getElementById("colorPicker");
 const colorBtnElement = document.getElementById("colorBtn");
 const rainbowBtnElement = document.getElementById("rainbowBtn");
 const eraserBtnElement = document.getElementById("eraserBtn");
 const clearBtnElement = document.getElementById("clearBtn");
+const backgroundBtnElement = document.getElementById("backgroundBtn");
+const colorPickerElementBg = document.getElementById("colorPickerBg");
+
+// Click events
 
 colorPickerElement.oninput = (e) => setCurrentColor(e.target.value);
-colorBtnElement.onclick = () => setCurrentMode("color");
+colorPickerElement.onclick = () => setCurrentMode("color");
+colorPickerElementBg.oninput = (e) => changeBackground(e.target.value);
+colorPickerElementBg.onclick = () => setCurrentMode("background");
+
+
+// colorBtnElement.onclick = () => setCurrentMode("color");
 rainbowBtnElement.onclick = () => setCurrentMode("rainbow");
 eraserBtnElement.onclick = () => setCurrentMode("eraser");
 clearBtnElement.onclick = () => setCurrentMode("clear");
+
+// backgroundBtnElement.onclick = () => setCurrentMode("background");
+
+
+// Clears the board
+
+function cleanBoard() {
+  let board = document.querySelector(".grid");
+  board.innerHTML = "";
+}
 
 function createTable(size) {
   for (let i = 0; i < size * size; i += 1) {
@@ -34,9 +57,7 @@ function createTable(size) {
   }
 }
 
-gridElement.addEventListener("mouseover", function (e) {
-  hoveredElement = e.target;
-});
+// Sets modes
 
 function setCurrentColor(newColor) {
   currentColor = newColor;
@@ -53,14 +74,21 @@ function setCurrentSize(newSize) {
   console.log(newSize);
 }
 
-// colorPicker.oninput = (e) => setCurrentColor(e.target.value);
-sizeSliderElement.oninput = (e) => setCurrentSize(e.target.value);
+function setGridBackground(newBackground) {
+  currentBackgroundColor = newBackground;
+}
+
+// sizeSliderElement.oninput = (e) => setCurrentSize(e.target.value);
+
+// Event listeners
+
+gridElement.addEventListener("mouseover", function (e) {
+  hoveredElement = e.target;
+});
 
 
-
-gridElement.addEventListener("mousedown" && "mouseover", clickButton);
-
-createTable(currentSize);
+clearBtnElement.addEventListener("click", clearBackground);
+gridElement.addEventListener("mouseover", clickButton);
 
 function clickButton(e) {
   if (currentMode === "eraser") {
@@ -72,8 +100,21 @@ function clickButton(e) {
     hoveredElement.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
   } else if (currentMode === "color") {
     hoveredElement.style.backgroundColor = currentColor;
-    
-  } else if (currentMode === "clear") {
-    gridElement.backgroundColor = "#FFFFFF"; }
-    
+  }
 }
+
+function clearBackground(e) {
+  if (currentMode === "clear") {
+    cleanBoard();
+    gridElement.style.backgroundColor = "#ffffff";
+    createTable(currentSize);
+  }
+}
+
+function changeBackground(currentBackgroundColor) {
+  if (currentMode === "background") {
+    gridElement.style.backgroundColor = currentBackgroundColor;
+  }
+}
+
+createTable(currentSize);
