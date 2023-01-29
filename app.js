@@ -10,7 +10,6 @@ let hoveredElement = "";
 let currentBackgroundColor = defaultBackground;
 
 // ID selectors
-
 const divElement = document.getElementById("divSquare");
 const sizeValueElement = document.getElementById("sizeValue");
 const sizeSliderElement = document.getElementById("sizeSlider");
@@ -24,12 +23,10 @@ const backgroundBtnElement = document.getElementById("backgroundBtn");
 const colorPickerElementBg = document.getElementById("colorPickerBg");
 
 // Click events
-
 colorPickerElement.oninput = (e) => setCurrentColor(e.target.value);
 colorPickerElement.onclick = () => setCurrentMode("color");
 colorPickerElementBg.oninput = (e) => changeBackground(e.target.value);
 colorPickerElementBg.onclick = () => setCurrentMode("background");
-
 
 // colorBtnElement.onclick = () => setCurrentMode("color");
 rainbowBtnElement.onclick = () => setCurrentMode("rainbow");
@@ -38,14 +35,13 @@ clearBtnElement.onclick = () => setCurrentMode("clear");
 
 // backgroundBtnElement.onclick = () => setCurrentMode("background");
 
-
 // Clears the board
-
 function cleanBoard() {
   let board = document.querySelector(".grid");
   board.innerHTML = "";
 }
 
+// Create grid
 function createTable(size) {
   for (let i = 0; i < size * size; i += 1) {
     const createDiv = document.createElement("div");
@@ -58,7 +54,6 @@ function createTable(size) {
 }
 
 // Sets modes
-
 function setCurrentColor(newColor) {
   currentColor = newColor;
   console.log(currentColor);
@@ -86,7 +81,6 @@ gridElement.addEventListener("mouseover", function (e) {
   hoveredElement = e.target;
 });
 
-
 clearBtnElement.addEventListener("click", clearBackground);
 gridElement.addEventListener("mouseover", clickButton);
 
@@ -102,6 +96,7 @@ function clickButton(e) {
     hoveredElement.style.backgroundColor = currentColor;
   }
 }
+
 
 function clearBackground(e) {
   if (currentMode === "clear") {

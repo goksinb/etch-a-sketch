@@ -41,7 +41,7 @@ body {
 
 .grid div {
   border: solid 0.1px;
-  border-color: rgb(187, 187, 187);
+  border-color: rgb(203, 203, 203);
 }
 .grid div:hover {
   background-color: rgb(212, 209, 209);
