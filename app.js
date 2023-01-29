@@ -86,7 +86,7 @@ gridElement.addEventListener("mouseover", clickButton);
 
 function clickButton(e) {
   if (currentMode === "eraser") {
-    hoveredElement.style.backgroundColor = "#FFFFFF";
+    hoveredElement.style.backgroundColor = "transparent";
   } else if (currentMode === "rainbow") {
     const randomR = Math.floor(Math.random() * 256);
     const randomG = Math.floor(Math.random() * 256);
