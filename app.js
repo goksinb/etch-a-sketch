@@ -15,6 +15,7 @@ const sizeValueElement = document.getElementById("sizeValue");
 const sizeSliderElement = document.getElementById("sizeSlider");
 const gridElement = document.getElementById("grid");
 const colorPickerElement = document.getElementById("colorPicker");
+const gridBtnElement = document.getElementById("gridBtn");
 const colorBtnElement = document.getElementById("colorBtn");
 const rainbowBtnElement = document.getElementById("rainbowBtn");
 const eraserBtnElement = document.getElementById("eraserBtn");
@@ -60,6 +61,7 @@ function setCurrentColor(newColor) {
 }
 
 function setCurrentMode(newMode) {
+
   currentMode = newMode;
   console.log(newMode);
 }
@@ -83,6 +85,7 @@ gridElement.addEventListener("mouseover", function (e) {
 
 clearBtnElement.addEventListener("click", clearBackground);
 gridElement.addEventListener("mouseover", clickButton);
+
 
 function clickButton(e) {
   if (currentMode === "eraser") {
@@ -111,5 +114,7 @@ function changeBackground(currentBackgroundColor) {
     gridElement.style.backgroundColor = currentBackgroundColor;
   }
 }
+
+
 
 createTable(currentSize);
