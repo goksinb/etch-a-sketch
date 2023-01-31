@@ -61,7 +61,6 @@ function setCurrentColor(newColor) {
 }
 
 function setCurrentMode(newMode) {
-
   currentMode = newMode;
   console.log(newMode);
 }
@@ -86,7 +85,6 @@ gridElement.addEventListener("mouseover", function (e) {
 clearBtnElement.addEventListener("click", clearBackground);
 gridElement.addEventListener("mouseover", clickButton);
 
-
 function clickButton(e) {
   if (currentMode === "eraser") {
     hoveredElement.style.backgroundColor = "transparent";
@@ -99,7 +97,6 @@ function clickButton(e) {
     hoveredElement.style.backgroundColor = currentColor;
   }
 }
-
 
 function clearBackground(e) {
   if (currentMode === "clear") {
@@ -114,7 +111,5 @@ function changeBackground(currentBackgroundColor) {
     gridElement.style.backgroundColor = currentBackgroundColor;
   }
 }
-
-
 
 createTable(currentSize);

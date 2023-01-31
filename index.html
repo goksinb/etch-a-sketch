@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
@@ -13,20 +15,22 @@
   <body>
     <header class="header">
       <h1 class="title">Etch-a-sketch</h1>
+      <p>Hover over the grid to start painting</p>
     </header>
     <main class="main">
       <section class="settings">
         <div id="buttons">
-          <label for="colorPicker">Color Mode</label>
+          <label for="colorPicker">Select Color</label>
           <input id="colorPicker" type="color" value="#333333" />
           <!-- <button id="colorBtn">Color mode</button> -->
-          <button id="gridBtn">Grid Size</button>
+          <!-- <button id="gridBtn">Grid Size</button> -->
           <button id="rainbowBtn">Confetti!</button>
           <button id="eraserBtn">Eraser</button>
           <button id="clearBtn">Clear</button>
           <!-- <button id="backgroundBtn">Background Color</button> -->
+
+          <input id="colorPickerBg" type="color" value="#FFFFFF" />
           <label for="colorPickerBg">Background Color</label>
-          <input id="colorPickerBg" type="color" value="#FFFFFF"  />
         </div>
 
         <!-- <div id="sizeValue" class="size-value">16 x 16</div>

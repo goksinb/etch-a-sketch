@@ -1,5 +1,5 @@
 body {
-
+  overflow: hidden;
   background-color: rgb(230, 233, 242);
   margin: 0;
   padding: 0;
@@ -8,6 +8,8 @@ body {
 }
 
 .title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   color: rgb(17, 17, 17);
   font-family: "Caveat", cursive;
   font-size: 60px;
@@ -16,13 +18,12 @@ body {
 .container {
   margin: auto;
   margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   display: flex;
   background: rgb(255, 255, 255);
   border: solid 2px rgb(17, 17, 17);
   border-radius: 4px;
   width: 100%;
-
   width: 400px;
   height: 400px;
 }
@@ -72,6 +73,11 @@ button {
   cursor: pointer;
 }
 
+#buttons {
+  display: flex;
+  align-items: center;
+}
+
 #colorBtn {
   background-color: #e6ffd4;
 }
@@ -112,5 +118,3 @@ footer {
 .active {
   background-color: rgb(111, 255, 0);
 }
-
-
