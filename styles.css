@@ -1,3 +1,14 @@
+html,
+body {
+  height: 100%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
 body {
   background-color: rgb(229, 233, 242);
   color: rgb(17, 17, 17);
@@ -9,20 +20,38 @@ body {
 }
 
 .title {
+  justify-content: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
   color: rgb(17, 17, 17);
   font-family: "Caveat", cursive;
-  font-size: 55px;
+  font-size: 60px;
 }
 
+#grid-size-btns {
+  margin-right: 10rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  margin-left: 10rem;
+  padding: 1rem;
+  align-items: center;
+}
 .container {
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
   display: flex;
   background: rgb(255, 255, 255);
-  border: solid 2px rgb(102, 0, 165);
+  border: solid 2px rgb(77, 0, 165);
   border-radius: 3px;
   width: 100%;
   width: 450px;
@@ -52,40 +81,23 @@ body {
   background-color: rgb(212, 209, 209);
 }
 
-#buttons {
-  display: flex;
-  justify-content: center;
-}
-
 #colorPicker,
 #colorPickerBg {
   margin: 1rem 0.3rem;
-  height: 3rem;
-  width: 3rem;
   cursor: pointer;
-  display: block;
-  width: 35px;
-  height: 35px;
+  width: 3rem;
+  height: 3rem;
   border-radius: 2px;
   border-color: rgb(127, 121, 130);
 }
 
 button {
-  margin: 1.5rem 0.2rem;
+  margin: 0.5rem;
   border: solid 1px rgb(187, 187, 187);
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   cursor: pointer;
   border-color: rgb(127, 121, 130);
-}
-
-#buttons {
-  display: flex;
-  align-items: center;
-}
-
-#colorBtn {
-  background-color: #e6ffd4;
 }
 
 #rainbowBtn {
@@ -112,24 +124,21 @@ button {
 
 #grid-size-btns {
   margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
 #grid-size-btns button {
-  padding: 0.7rem 1rem;
+  font-size: 15px;
+  padding: 1rem 1rem;
   border-radius: 5px;
-  border-color: rgb(102, 0, 165);
+  border-color: rgb(77, 0, 165);
 }
 
 footer {
-  background-color: rgb(229, 233, 242);
   padding: 1.2rem;
-  margin-top: 4rem;
-}
-
-.deactive {
-  background-color: blue;
-}
-
-.active {
-  background-color: rgb(111, 255, 0);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: rgb(77, 0, 165);
+  color: white;
 }
