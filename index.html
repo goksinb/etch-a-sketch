@@ -15,16 +15,20 @@
   <body>
     <header class="header">
       <h1 class="title">Etch-a-sketch</h1>
-      <p>Hover over the grid to start painting</p>
+      <p>
+        Choose your grid size and brush color. Hover over the grid to start
+        painting
+      </p>
+      <p></p>
     </header>
     <main class="main">
       <section class="settings">
         <div id="buttons">
-          <label for="colorPicker">Select Color</label>
+          <label for="colorPicker">Brush Color</label>
           <input id="colorPicker" type="color" value="#333333" />
           <!-- <button id="colorBtn">Color mode</button> -->
-          <!-- <button id="gridBtn">Grid Size</button> -->
-          <button id="rainbowBtn">Confetti!</button>
+
+          <button id="rainbowBtn">Confetti mode!</button>
           <button id="eraserBtn">Eraser</button>
           <button id="clearBtn">Clear</button>
           <!-- <button id="backgroundBtn">Background Color</button> -->
@@ -38,6 +42,11 @@
       </section>
       <div id="container" class="container">
         <div id="grid" class="grid"></div>
+      </div>
+      <div id="grid-size-btns">
+        <button id="16x16btn">16x16</button>
+        <button id="32x32btn">32x32</button>
+        <button id="64x64btn">64x64</button>
       </div>
     </main>
     <footer class="footer">UnseenInk © 2023</footer>

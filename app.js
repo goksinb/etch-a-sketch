@@ -2,12 +2,14 @@ const defaultMode = "default";
 const defaultSize = 30;
 const defaultColor = "#000000";
 const defaultBackground = "#ffffff";
+const defaultGridSize = "16x16";
 
 let currentMode = defaultMode;
 let currentSize = defaultSize;
 let currentColor = defaultColor;
 let hoveredElement = "";
 let currentBackgroundColor = defaultBackground;
+let currentGridSize = defaultGridSize;
 
 // ID selectors
 const divElement = document.getElementById("divSquare");
@@ -22,6 +24,9 @@ const eraserBtnElement = document.getElementById("eraserBtn");
 const clearBtnElement = document.getElementById("clearBtn");
 const backgroundBtnElement = document.getElementById("backgroundBtn");
 const colorPickerElementBg = document.getElementById("colorPickerBg");
+const grid16BtnElement = document.getElementById("16x16btn");
+const grid32BtnElement = document.getElementById("32x32btn");
+const grid64BtnElement = document.getElementById("64x64btn");
 
 // Click events
 colorPickerElement.oninput = (e) => setCurrentColor(e.target.value);
@@ -33,6 +38,9 @@ colorPickerElementBg.onclick = () => setCurrentMode("background");
 rainbowBtnElement.onclick = () => setCurrentMode("rainbow");
 eraserBtnElement.onclick = () => setCurrentMode("eraser");
 clearBtnElement.onclick = () => setCurrentMode("clear");
+grid16BtnElement.onclick = () => setCurrentSize("16x16");
+grid32BtnElement.onclick = () => setCurrentSize("32x32");
+grid64BtnElement.onclick = () => setCurrentSize("64x64");
 
 // backgroundBtnElement.onclick = () => setCurrentMode("background");
 
@@ -85,6 +93,10 @@ gridElement.addEventListener("mouseover", function (e) {
 clearBtnElement.addEventListener("click", clearBackground);
 gridElement.addEventListener("mouseover", clickButton);
 
+grid16BtnElement.addEventListener("click", changeGrid);
+grid32BtnElement.addEventListener("click", changeGrid);
+grid64BtnElement.addEventListener("click", changeGrid);
+
 function clickButton(e) {
   if (currentMode === "eraser") {
     hoveredElement.style.backgroundColor = "transparent";
@@ -102,13 +114,26 @@ function clearBackground(e) {
   if (currentMode === "clear") {
     cleanBoard();
     gridElement.style.backgroundColor = "#ffffff";
-    createTable(currentSize);
+    createTable(defaultSize);
   }
 }
 
 function changeBackground(currentBackgroundColor) {
   if (currentMode === "background") {
     gridElement.style.backgroundColor = currentBackgroundColor;
+  }
+}
+
+function changeGrid(currentGridSize) {
+  if (currentSize === "16x16") {
+    cleanBoard();
+    createTable(16);
+  } else if (currentSize === "32x32") {
+    cleanBoard();
+    createTable(32);
+  } else if (currentSize === "64x64") {
+    cleanBoard();
+    createTable(64);
   }
 }
 
